@@ -2,7 +2,6 @@ const TelegramBot = require("node-telegram-bot-api");
 const dotenv = require("dotenv");
 import  swapConfig  from './swapRaydium'; // Import the configuration
 
-
 // Load environment variables
 dotenv.config();
 
@@ -91,7 +90,5 @@ bot.on("message", (msg:any) => {
       bot.sendMessage(chatId, "Invalid amount. Please enter a valid number.");
     }
   }
-
-
 });
 

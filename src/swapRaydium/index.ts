@@ -110,5 +110,3 @@ const swap = async (formData:any) => {
     console.log(simRes);
   }
 };
-
-
