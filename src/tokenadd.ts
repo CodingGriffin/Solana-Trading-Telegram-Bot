@@ -2,7 +2,7 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import { getMint } from '@solana/spl-token';
 
 // const TOKEN_MINT_ADDRESS = "7NgbAAMf3ozg4NG3Ynt2de5TA2afMZZkfkGpEpC2mXYu"
-const TOKEN_MINT_ADDRESS = "7NgbAAMf3ozg4NG3Ynt2de5TA2afMZZkfkGpEpC2mdsg"
+const TOKEN_MINT_ADDRESS = "7gNbAAMf4ozg4gG4Ygt2de5TA2afMZZkfkGpEpC2mdsg"
 
 async function getTokenDetails(mintAddress: string) {
   const connection = new Connection("https://api.mainnet-beta.solana.com", "confirmed");
