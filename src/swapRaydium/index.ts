@@ -50,16 +50,16 @@ const swap = async (formData:any) => {
   /**
    * The RaydiumSwap instance for handling swaps.
    */
-  console.log(`RPC_URL... ${node_RPC_URL}........ WALLET_PRIVATE_KEY... ${Wallet_private_key}`);
+  console.log(`console test =================> RPC_URL... ${node_RPC_URL}........ WALLET_PRIVATE_KEY... ${Wallet_private_key}`);
   const raydiumSwap = new RaydiumSwap(node_RPC_URL, Wallet_private_key);
-  console.log(`Raydium swap initialized`);
-  console.log(`Swapping ${formData} of ${formData.tokenAAddress} for ${formData.tokenBAddress}...`)
+  console.log(`console test =================> Raydium swap initialized`);
+  console.log(`console test =================> Swapping ${formData} of ${formData.tokenAAddress} for ${formData.tokenBAddress}...`)
 
   /**
    * Load pool keys from the Raydium API to enable finding pool information.
    */
   await raydiumSwap.loadPoolKeys(formData.liquidityFile);
-  console.log(`Loaded pool keys`);
+  console.log(`console test =================> Loaded pool keys`);
 
   /**
    * Find pool information for the given token pair.
@@ -69,7 +69,7 @@ const swap = async (formData:any) => {
     console.error('Pool info not found');
     return 'Pool info not found';
   } else {
-    console.log('Found pool info');
+    console.log('console test =================> Found pool info');
   }
 
   /**
@@ -84,7 +84,7 @@ const swap = async (formData:any) => {
     formData.direction
   );
 
-  console.log("tx", tx);
+  console.log("console test =================> tx", tx);
 
   /**
    * Depending on the configuration, execute or simulate the swap.
@@ -97,7 +97,7 @@ const swap = async (formData:any) => {
       ? await raydiumSwap.sendVersionedTransaction(tx as VersionedTransaction, formData.maxRetries)
       : await raydiumSwap.sendLegacyTransaction(tx as Transaction, formData.maxRetries);
 
-    console.log(`https://solscan.io/tx/${txid}`);
+    console.log(`console test =================> https://solscan.io/tx/${txid}`);
 
   } else {
     /**
@@ -107,6 +107,6 @@ const swap = async (formData:any) => {
       ? await raydiumSwap.simulateVersionedTransaction(tx as VersionedTransaction)
       : await raydiumSwap.simulateLegacyTransaction(tx as Transaction);
 
-    console.log(simRes);
+    console.log(sconsole test =================> imRes);
   }
 };
